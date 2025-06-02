@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Application</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+<div class="combined-header-section">
+    <div class="header-nav">
+        <div class="logo">Survey</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Fill Out Survey</a>
+            <a href="stats.html" >View Survey Results</a>
+        </div>
+    </div>
+    <form id="surveyForm">
+        <div class="personal-details">
+            <div class="section-title">Personal Details:</div>
+            <div class="form-group">
+                <div class="input-row">
+                    <label for="fullName">Full Names</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="input-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-row">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="input-row">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section" style="margin-top: 60px;">
+            <div class="food-section">
+                <div class="food-question">What is your favorite food?</div>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="pizza" name="food" value="pizza">
+                        <label for="pizza">Pizza</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="pasta" name="food" value="pasta">
+                        <label for="pasta">Pasta</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="papwors" name="food" value="pap and wors">
+                        <label for="papwors">Pap and Wors</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="others" name="food" value="others">
+                        <label for="others">Others</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="likert-instruction">
+                Please rate your level of agreement on a scale of 1 to 5, with 1 being "strongly agree" and 5 being "strongly disagree".
+            </div>
+
+            <table class="likert-table">
+                <thead>
+                <tr>
+                    <th class="statement-column"></th>
+                    <th class="rating-column">Strongly Agree</th>
+                    <th class="rating-column">Agree</th>
+                    <th class="rating-column">Neutral</th>
+                    <th class="rating-column">Disagree</th>
+                    <th class="rating-column">Strongly Disagree</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="statement-cell">I like to watch movies</td>
+                    <td class="rating-cell"><input type="radio" name="q1" value="1"></td>
+                    <td class="rating-cell"><input type="radio" name="q1" value="2"></td>
+                    <td class="rating-cell"><input type="radio" name="q1" value="3"></td>
+                    <td class="rating-cell"><input type="radio" name="q1" value="4"></td>
+                    <td class="rating-cell"><input type="radio" name="q1" value="5"></td>
+                </tr>
+                <tr>
+                    <td class="statement-cell">I like to listen to radio</td>
+                    <td class="rating-cell"><input type="radio" name="q2" value="1"></td>
+                    <td class="rating-cell"><input type="radio" name="q2" value="2"></td>
+                    <td class="rating-cell"><input type="radio" name="q2" value="3"></td>
+                    <td class="rating-cell"><input type="radio" name="q2" value="4"></td>
+                    <td class="rating-cell"><input type="radio" name="q2" value="5"></td>
+                </tr>
+                <tr>
+                    <td class="statement-cell">I like to eat out</td>
+                    <td class="rating-cell"><input type="radio" name="q3" value="1"></td>
+                    <td class="rating-cell"><input type="radio" name="q3" value="2"></td>
+                    <td class="rating-cell"><input type="radio" name="q3" value="3"></td>
+                    <td class="rating-cell"><input type="radio" name="q3" value="4"></td>
+                    <td class="rating-cell"><input type="radio" name="q3" value="5"></td>
+                </tr>
+                <tr>
+                    <td class="statement-cell">I like to watch TV</td>
+                    <td class="rating-cell"><input type="radio" name="q4" value="1"></td>
+                    <td class="rating-cell"><input type="radio" name="q4" value="2"></td>
+                    <td class="rating-cell"><input type="radio" name="q4" value="3"></td>
+                    <td class="rating-cell"><input type="radio" name="q4" value="4"></td>
+                    <td class="rating-cell"><input type="radio" name="q4" value="5"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="submit-container">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </form>
+</div>
+<script type="module" src="/js/survey.js"></script>
+</body>
+</html>

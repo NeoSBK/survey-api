@@ -41,7 +41,7 @@ public class SurveyControllerTest {
                 "John Doe",
                 "john.doe@example.com",
                 LocalDate.of(1990, 5, 15),
-                "+1234567890",
+                "0234567890",
                 Set.of("Pizza", "Pasta"),
                 4, 3, 5, 2
         );
@@ -50,7 +50,7 @@ public class SurveyControllerTest {
     private SurveyResponseDto createSampleResponse() {
         return new SurveyResponseDto(
                 new UserDto(1L, "John Doe", "john.doe@example.com",
-                        LocalDate.of(1990, 5, 15), "+1234567890", 33),
+                        LocalDate.of(1990, 5, 15), "0234567890", 33),
                 new RatingsDto(1L, Set.of("Pizza", "Pasta"), 4, 3, 5, 2)
         );
     }
@@ -102,5 +102,4 @@ public class SurveyControllerTest {
                         .content(objectMapper.writeValueAsString(minimalSubmission)))
                 .andExpect(status().isCreated());
     }
-
 }

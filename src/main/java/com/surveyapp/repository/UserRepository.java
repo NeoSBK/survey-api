@@ -9,13 +9,10 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT AVG(YEAR(CURRENT_DATE) - YEAR(u.dateOfBirth)) FROM User u")
-    Double findAverageAge();
-
-    @Query("SELECT MIN(u.dateOfBirth) FROM User u")
+    @Query("SELECT MAX(u.dateOfBirth) FROM User u")
     LocalDate findYoungestDob();
 
-    @Query("SELECT MAX(u.dateOfBirth) FROM User u")
+    @Query("SELECT MIN(u.dateOfBirth) FROM User u")
     LocalDate findOldestDob();
 
     @Query("SELECT u FROM User u WHERE u.dateOfBirth IS NOT NULL")

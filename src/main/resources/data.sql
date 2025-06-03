@@ -1,12 +1,12 @@
 -- Sample Users
 INSERT INTO survey_user (id, full_name, email, date_of_birth, contact_number)
-VALUES (1, 'John Doe', 'john.doe@example.com', '1990-05-15', '+1234567890');
+VALUES (1, 'John Doe', 'john.doe@example.com', '1990-05-15', '034567890');
 
 INSERT INTO survey_user (id, full_name, email, date_of_birth, contact_number)
-VALUES (2, 'Jane Smith', 'jane.smith@example.com', '1985-10-22', '+1987654321');
+VALUES (2, 'Jane Smith', 'jane.smith@example.com', '1985-10-22', '0987654321');
 
 INSERT INTO survey_user (id, full_name, email, date_of_birth, contact_number)
-VALUES (3, 'Alex Young', 'alex.y@example.com', '2010-03-10', '+1122334455');
+VALUES (3, 'Alex Young', 'alex.y@example.com', '2010-03-10', '0122334455');
 
 -- Sample Ratings
 INSERT INTO ratings (id, movies_rating, radio_rating, eat_out_rating, tv_rating, user_id)

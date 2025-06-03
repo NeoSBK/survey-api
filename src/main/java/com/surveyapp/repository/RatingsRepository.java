@@ -29,7 +29,4 @@ public interface RatingsRepository extends JpaRepository<Ratings, Long> {
 
     @Query("SELECT AVG(r.tvRating) FROM Ratings r")
     Double findAverageTvRating();
-
-
-
 }

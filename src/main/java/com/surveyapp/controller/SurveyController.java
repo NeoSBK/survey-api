@@ -25,16 +25,23 @@ public class SurveyController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @GetMapping("/statistics")
+    public ResponseEntity<SurveyStatisticsDto> statistics() {
+        SurveyStatisticsDto stats = surveyService.getStatistics();
+        return ResponseEntity.ok(stats);
+    }
+
+    //For Demonstration
     @GetMapping("/all")
     public ResponseEntity<List<SurveyResponseDto>> getAllUserSurveys() {
         List<SurveyResponseDto> responses = surveyService.getAllUserSurveys();
         return ResponseEntity.ok(responses);
     }
 
-
-    @GetMapping("/statistics")
-    public ResponseEntity<SurveyStatisticsDto> statistics() {
-        SurveyStatisticsDto stats = surveyService.getStatistics();
-        return ResponseEntity.ok(stats);
+    //For Demonstration
+    @DeleteMapping("/delete-all")
+    public ResponseEntity<String> deleteAllSurveys() {
+        surveyService.deleteAllSurveys();
+        return ResponseEntity.ok("All surveys deleted successfully.");
     }
 }

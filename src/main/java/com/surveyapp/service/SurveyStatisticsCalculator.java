@@ -55,12 +55,13 @@ public class SurveyStatisticsCalculator {
         );
     }
 
-    private double averageAge(List<User> users){
+    private int averageAge(List<User> users) {
         double avgAge = users.stream()
                 .mapToInt(user -> Period.between(user.getDateOfBirth(), LocalDate.now()).getYears())
                 .average()
                 .orElse(0.0);
-        return roundToOneDecimalPlace(avgAge);
+        double rounded = roundToOneDecimalPlace(avgAge);
+        return (int) Math.round(rounded);
     }
 
     private int calculateAge(LocalDate dob){

@@ -5,7 +5,6 @@ import lombok.*;
 import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 @Entity
 @Data
@@ -32,4 +31,11 @@ public class User {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Ratings ratings;
+
+    public User(String fullName, String email, LocalDate dob, String contactNumber) {
+        this.fullName = fullName;
+        this.email = email;
+        this.dateOfBirth = dob;
+        this.contactNumber = contactNumber;
+    }
 }

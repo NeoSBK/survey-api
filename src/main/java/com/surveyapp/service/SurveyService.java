@@ -12,7 +12,9 @@ import com.surveyapp.repository.RatingsRepository;
 import com.surveyapp.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,31 +41,41 @@ public class SurveyService {
         this.statisticsCalculator = statisticsCalculator;
     }
 
-    public List<SurveyResponseDto> getAllUserSurveys() {
-        return userRepository.findAll().stream()
-                .map(surveyMapper::toResponseDto)
-                .collect(Collectors.toList());
-    }
-
     @Transactional
     public SurveyResponseDto submitSurvey(SurveySubmissionDto dto) {
+
+        if (userRepository.existsByEmail(dto.email())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "A survey has already been submitted with this email.");
+        }
+
         User user = userMapper.toEntity(dto);
         Ratings ratings = ratingsMapper.toEntity(dto);
 
-        //bidirectional relationship
         ratings.setUser(user);
         user.setRatings(ratings);
 
         User savedUser = userRepository.save(user);
-
-        //Return response DTO
         return surveyMapper.toResponseDto(savedUser);
     }
+
 
     public SurveyStatisticsDto getStatistics() {
         long totalSurveys = ratingsRepository.countTotalSurveys();
         List<User> users = userRepository.findAllWithDateOfBirth();
 
         return statisticsCalculator.Statistics(users, totalSurveys);
+    }
+
+    //For demonstration
+    public void deleteAllSurveys() {
+        ratingsRepository.deleteAll();
+        userRepository.deleteAll();
+    }
+
+    //For demonstration
+    public List<SurveyResponseDto> getAllUserSurveys() {
+        return userRepository.findAll().stream()
+                .map(surveyMapper::toResponseDto)
+                .collect(Collectors.toList());
     }
 }

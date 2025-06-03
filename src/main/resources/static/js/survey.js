@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Survey submitted successfully!');
             form.reset();
         } else {
-            alert('Error submitting survey.');
+            alert('Error submitting survey, Check if all Fields Are Filled Properly.');
         }
     });
 });

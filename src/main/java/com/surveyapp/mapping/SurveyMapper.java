@@ -14,16 +14,11 @@ public interface SurveyMapper {
     @Mapping(source = "user.ratings", target = "ratings")
     SurveyResponseDto toResponseDto(User user);
 
-//    @Mapping(target = "user.id", ignore = true)
-//    @Mapping(target = "ratings.id", ignore = true)
-//    @Mapping(target = "ratings.user", ignore = true)
-//    SurveyResponseDto toResponseDto(SurveySubmissionDto submissionDto);
-
-    // Convert SurveySubmissionDto to User+Ratings (for POST submissions)
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "ratings", ignore = true)
     User toUserEntity(SurveySubmissionDto dto);
 
+    @Mapping(source = "favouriteFoods", target = "favoriteFoods")
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "user", ignore = true)
     Ratings toRatingsEntity(SurveySubmissionDto dto);

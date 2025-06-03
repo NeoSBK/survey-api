@@ -5,7 +5,6 @@ import com.surveyapp.dto.UserDto;
 import com.surveyapp.model.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 import java.time.LocalDate;
 import java.time.Period;

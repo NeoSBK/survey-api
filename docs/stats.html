@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <link rel="stylesheet" href="css/stats.css" />
+</head>
+<body>
+<div class="combined-header-section">
+    <div class="header-nav">
+        <div class="logo">Survey</div>
+        <div class="nav-links">
+            <a href="index.html" >Fill Out Survey</a>
+            <a href="stats.html" class="active" >View Survey Results</a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Survey Results</h2>
+
+    <div class="results-container" id="resultsContainer">
+        <div id="loadingMessage" style="text-align: center; font-size: 1.2rem; color: black; padding: 40px;">
+            Loading survey results...
+        </div>
+
+        <div id="noDataMessage" style="text-align: center; font-size: 1.3rem; color: black; padding: 60px; display: none;">
+            No Surveys Available.
+        </div>
+
+        <div id="surveyData" style="display: none;">
+            <div class="stats-section">
+                <div class="stat-row">
+                    <div class="stat-label">Total number of surveys:</div>
+                    <div class="stat-value" id="totalSurveys">-</div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-label">Average Age:</div>
+                    <div class="stat-value" id="averageAge">-</div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-label">Oldest person who participated in the survey:</div>
+                    <div class="stat-value" id="oldestAge">-</div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-label">Youngest person who participated in the survey:</div>
+                    <div class="stat-value" id="youngestAge">-</div>
+                </div>
+            </div>
+
+            <!-- Food Preferences -->
+            <div class="food-preferences">
+                <div class="food-stat-row">
+                    <div class="food-label">Percentage of people who like Pizza:</div>
+                    <div class="food-value" id="pizzaPercentage">-</div>
+                </div>
+                <div class="food-stat-row">
+                    <div class="food-label">Percentage of people who like Pasta:</div>
+                    <div class="food-value" id="pastaPercentage">-</div>
+                </div>
+                <div class="food-stat-row">
+                    <div class="food-label">Percentage of people who like Pap and Wors:</div>
+                    <div class="food-value" id="papWorsPercentage">-</div>
+                </div>
+            </div>
+
+            <div class="activity-preferences">
+                <div class="activity-stat-row">
+                    <div class="activity-label">People who like to watch movies:</div>
+                    <div class="activity-value" id="moviesPercentage">-</div>
+                </div>
+                <div class="activity-stat-row">
+                    <div class="activity-label">People who like to listen to radio:</div>
+                    <div class="activity-value" id="radioPercentage">-</div>
+                </div>
+                <div class="activity-stat-row">
+                    <div class="activity-label">People who like to eat out:</div>
+                    <div class="activity-value" id="eatOutPercentage">-</div>
+                </div>
+                <div class="activity-stat-row">
+                    <div class="activity-label">People who like to watch TV:</div>
+                    <div class="activity-value" id="tvPercentage">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module" src="js/stats.js"></script>
+</body>
+</html>
